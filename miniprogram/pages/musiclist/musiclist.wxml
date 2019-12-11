@@ -1,0 +1,10 @@
+<view class='m-container' style='background: url({{listInfo.coverImgUrl}}) no-repeat  top/cover'></view>
+<view class='m-mask'></view>
+<view class='m-info'>
+  <image src="{{listInfo.coverImgUrl}}" class='m-img'></image>
+  <view class='m-wrap'> 
+    <view class='m-nm'>{{listInfo.name}}</view>
+  </view>
+</view>
+
+<x-musiclist musiclist="{{musiclist}}" />
