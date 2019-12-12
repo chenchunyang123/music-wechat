@@ -1,2 +1,16 @@
-<!--pages/player/player.wxml-->
-<text>pages/player/player.wxml</text>
+<view class="p-container" style="background:url({{picUrl}}) center/cover no-repeat"></view>
+<view class="p-mask"></view>
+
+<!-- 唱片 -->
+<view class="p-info">
+    <view class="p-disc {{isPlaying ? 'play' : ''}}">
+        <image class="p-img rotation {{isPlaying ? '' : 'rotation-pause'}}" src="{{picUrl}}"></image>
+    </view>
+</view>
+
+<!-- 控制面板 -->
+<view class="p-control">
+    <text class="iconfont icon-shangyishoushangyige" bind:tap="onPrev"></text>
+    <text class="iconfont {{isPlaying ? 'icon-zanting' : 'icon-bofang'}}" bind:tap="togglePlaying"></text>
+    <text class="iconfont icon-xiayigexiayishou" bind:tap="onNext"></text>
+</view>

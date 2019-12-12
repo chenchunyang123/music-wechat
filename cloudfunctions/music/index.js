@@ -15,6 +15,7 @@ exports.main = async(event, context) => {
         event
     })
 
+    // 获取歌单列表
     app.router('playlist', async(ctx, next) => {
         ctx.body = await cloud.database().collection('playlist')
             .skip(event.start)
@@ -26,6 +27,7 @@ exports.main = async(event, context) => {
             })
     })
 
+    // 获取歌单列表详情
     app.router('musiclist', async(ctx, next) => {
         ctx.body = await rp(BASE_URL + '/playlist/detail?id=' + event.playlistId)
             .then(res => {
@@ -33,6 +35,14 @@ exports.main = async(event, context) => {
             })
             .catch(err => {
                 console.log('获取详情失败')
+            })
+    })
+
+    // 获取歌曲播放地址
+    app.router('musicUrl', async(ctx, next) => {
+        ctx.body = await rp(BASE_URL + `/song/url?id=${event.musicId}`)
+            .then(res => {
+                return res
             })
     })
 
