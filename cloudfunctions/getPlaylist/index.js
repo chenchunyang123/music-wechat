@@ -61,7 +61,7 @@ exports.main = async(event, context) => {
     for (let i = 0; i < newData.length; i++) { // 循环插入数据
         await playlistCollection.add({
             data: {
-                ...playlist[i],
+                ...newData[i],
                 createTime: db.serverDate(),
             }        
         }).then(res => {

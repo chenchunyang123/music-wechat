@@ -46,5 +46,13 @@ exports.main = async(event, context) => {
             })
     })
 
+    // 获取歌曲的歌词
+    app.router('lyric', async(ctx, next) => {
+        ctx.body = await rp(BASE_URL + `/lyric?id=${event.musicId}`)
+            .then(res => {
+                return res
+            })
+    })
+
     return app.serve()
 }

@@ -1,1 +1,19 @@
-/* components/lyric/lyric.wxss */
+.l-container {
+    width: 100%;
+    height: 70%;
+    color: #ccc;
+    font-size: 32rpx;
+}
+
+.l-block {
+    position: relative;
+    top: 50%;
+}
+
+.l-lyric {
+    min-height: 64rpx;
+}
+
+.highlight {
+    color: #d81e06;
+}
