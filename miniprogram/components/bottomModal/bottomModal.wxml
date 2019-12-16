@@ -1,0 +1,7 @@
+<view class="b-modal" hidden="{{!modalShow}}">
+    <view class="b-panel">
+        <i class="iconfont icon-shanchu" bind:tap="onClose"></i>
+        <!-- 插槽 -->
+        <slot name="content"></slot>
+    </view>
+</view>

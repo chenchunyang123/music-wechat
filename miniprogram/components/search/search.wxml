@@ -1,0 +1,5 @@
+<view class="s-container">
+    <i class="iconfont icon-sousuo searchIcon"></i>
+    <input class="s-bar" placeholder="搜点什么？" placeholder-class="s-inbar"></input>
+    <button class="s-btn">搜索</button>
+</view>

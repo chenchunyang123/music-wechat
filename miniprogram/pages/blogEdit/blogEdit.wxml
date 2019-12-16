@@ -1,0 +1,10 @@
+<view class="b-container">
+    <textarea class="b-content" placeholder="有什么新鲜事..."></textarea>
+    <view class="b-imgList">
+        <!-- 显示图片 -->
+        <!-- 选择图片 -->
+        <view class="b-choose"></view>
+    </view>
+</view>
+
+<view class="b-footer"></view>
