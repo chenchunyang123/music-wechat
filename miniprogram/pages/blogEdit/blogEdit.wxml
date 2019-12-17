@@ -1,10 +1,35 @@
 <view class="b-container">
-    <textarea class="b-content" placeholder="有什么新鲜事..."></textarea>
+    <textarea
+        class="b-content"
+        placeholder="有什么新鲜事..."
+        bindinput="onInput"
+        maxlength="120"
+        auto-focus
+        bindfocus="onFocus"
+        bindblur="onBlur"
+    ></textarea>
     <view class="b-imgList">
         <!-- 显示图片 -->
+        <block wx:for="{{imgs}}" wx:key="*this">
+            <view class="b-imgWrap">
+                <image
+                    class="b-img" 
+                    src="{{item}}" 
+                    mode="aspectFill" 
+                    bind:tap="onViewImg" 
+                    data-src="{{item}}"
+                ></image>
+                <i class="iconfont icon-shanchu" bind:tap="onDel" data-index="{{index}}"></i>
+            </view>
+        </block>
         <!-- 选择图片 -->
-        <view class="b-choose"></view>
+        <view class="b-imgWrap b-choose" bind:tap="onChooseImg" hidden="{{!selectIconShow}}">
+            <i class="iconfont icon-jiahao"></i>
+        </view>
     </view>
 </view>
 
-<view class="b-footer"></view>
+<view class="b-footer" style="bottom: {{footerBottom + 'px'}}">
+    <text class="b-wordsNum">{{wordsNum}}</text>
+    <button class="b-btn" bind:tap="onPublish">发布</button>
+</view>
