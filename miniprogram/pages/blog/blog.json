@@ -1,7 +1,9 @@
 {
-  "usingComponents": {
-      "x-search": "/components/search/search",
-      "x-login": "/components/login/login"
-  },
-  "navigationBarTitleText": "发现"
+    "usingComponents": {
+        "x-search": "/components/search/search",
+        "x-login": "/components/login/login",
+        "x-blogCard": "/components/blogCard/blogCard"
+    },
+    "navigationBarTitleText": "发现",
+    "enablePullDownRefresh": true
 }

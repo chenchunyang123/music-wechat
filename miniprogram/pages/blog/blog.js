@@ -6,6 +6,7 @@ Page({
      */
     data: {
         modalShow: false, // 控制底部弹出层
+        blogList: [],   // 博客的数据
     },
 
     onPublish() { // 发布
@@ -44,11 +45,37 @@ Page({
         })
     },
 
+    goComment(e) {
+        wx.navigateTo({
+            url: `../../pages/blogComment/blogComment?blogId=${e.target.dataset.blogid}`,
+        })
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        
+        this._loadBlogList()
+    },
+
+    _loadBlogList(start = 0) {
+        wx.showLoading({
+            title: '拼命加载中...',
+        })
+        wx.cloud.callFunction({
+            name: 'blog',
+            data: {
+                $url: 'list',
+                start,
+                count: 10,
+            }
+        }).then(res => {
+            this.setData({
+                blogList: this.data.blogList.concat(res.result)
+            })
+            wx.hideLoading()
+            wx.stopPullDownRefresh()
+        })
     },
 
     /**
@@ -83,14 +110,17 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function() {
-
+        this.setData({
+            blogList: []
+        })
+        this._loadBlogList(0)
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function() {
-
+        this._loadBlogList(this.data.blogList.length)
     },
 
     /**

@@ -9,10 +9,19 @@
         </view>
     </view>
 
+    <!-- 主题内容列表 -->
+    <view class="b-contentList">
+        <block wx:for="{{blogList}}" wx:key="_id">
+            <view class="b-panel">
+                <x-blogCard content="{{item}}" data-blogId="{{item._id}}" bind:tap="goComment" />
+            </view>
+        </block>
+    </view>
+
     <!-- 底部弹出层 -->
-    <x-login 
-        modalShow="{{modalShow}}" 
-        bind:authorizeSuccess="authorizeSuccess" 
+    <x-login
+        modalShow="{{modalShow}}"
+        bind:authorizeSuccess="authorizeSuccess"
         bind:authorizeFail="authorizeFail"
     >
     </x-login>

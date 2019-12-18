@@ -1,0 +1,22 @@
+<view class="b-card">
+    <view class="b-title">
+        <image class="b-userImg" src="{{content.avatarUrl}}"></image>
+        <view class="b-box">
+            <view class="b-nickName">{{content.nickName}}</view>
+            <view class="b-time">{{_createTime}}</view>
+        </view>
+    </view>
+    <view class="b-content">{{content.content}}</view>
+    <view class="b-imgWrap">
+        <block wx:for="{{content.img}}" wx:key="index">
+            <image
+                class="b-img"
+                src="{{item}}"
+                mode="aspectFill"
+                catch:tap="onPreview"
+                data-imgSrc="{{item}}"
+                data-imgs="{{content.img}}"
+            ></image>
+        </block>
+    </view>
+</view>

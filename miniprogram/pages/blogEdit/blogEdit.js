@@ -89,6 +89,7 @@ Page({
 
         wx.showLoading({
             title: '发布中',
+            mask: true  // 增加蒙版
         })
 
         let fileIds = []
@@ -131,6 +132,9 @@ Page({
                 })
                 // 返回分享页面，并且刷新
                 wx.navigateBack()
+                const pages = getCurrentPages()
+                const prevPage = pages[pages.length - 2]
+                prevPage.onPullDownRefresh()   // 调用了上个页面的方法
             }).catch(err => {
                 wx.hideLoading()
                 wx.showToast({
