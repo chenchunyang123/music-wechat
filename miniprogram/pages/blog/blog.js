@@ -1,4 +1,5 @@
 // pages/blog/blog.js
+let keywords = ''   // 搜索关键字
 Page({
 
     /**
@@ -51,6 +52,14 @@ Page({
         })
     },
 
+    onSearch(e) {
+        this.setData({
+            blogList: [],
+        })
+        keywords = e.detail.keywords
+        this._loadBlogList(0)
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
@@ -65,8 +74,9 @@ Page({
         wx.cloud.callFunction({
             name: 'blog',
             data: {
-                $url: 'list',
                 start,
+                keywords,
+                $url: 'list',
                 count: 10,
             }
         }).then(res => {

@@ -17,7 +17,18 @@ exports.main = async (event, context) => {
     })
 
     app.router('list', async(ctx, next) => {
+        const keywords = event.keywords
+        let obj = {}
+        if (keywords.trim() !== '') {
+            obj = {
+                content: db.RegExp({
+                    regexp: keywords,
+                    options: 'i'
+                })
+            }
+        }
         let blogList = await blogCollection
+            .where(obj)
             .skip(event.start)
             .limit(event.count)
             .orderBy('createTime', 'desc')

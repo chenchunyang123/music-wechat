@@ -5,7 +5,11 @@
             <i class="iconfont icon-fabu"></i>
         </view>
         <view class="b-search">
-            <x-search iconfont="iconfont" icon-sousuo="icon-sousuo" />
+            <x-search 
+                iconfont="iconfont" 
+                icon-sousuo="icon-sousuo"
+                bind:search="onSearch" 
+            />
         </view>
     </view>
 
