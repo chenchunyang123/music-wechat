@@ -27,6 +27,7 @@
                     icon-pinglun="icon-pinglun" 
                     icon-fenxiang="icon-fenxiang" 
                     blogId="{{item._id}}"
+                    blog="{{item}}"
                 />
             </view>
         </block>

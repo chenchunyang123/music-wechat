@@ -26,11 +26,11 @@
 </scroll-view>
 
 <view class="blog-ctrl">
-    <x-blogCtrl 
-        blogId="{{blog._id}}" 
-        iconfont="iconfont" 
-        icon-pinglun="icon-pinglun" 
-        icon-fenxiang="icon-fenxiang" 
-        bind:refreshCommentList="_getComment" 
+    <x-blogCtrl
+        blogId="{{blog._id}}"
+        iconfont="iconfont"
+        icon-pinglun="icon-pinglun"
+        icon-fenxiang="icon-fenxiang"
+        bind:refreshCommentList="_getComment"
     />
 </view>
