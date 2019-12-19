@@ -19,7 +19,6 @@ Component({
      */
     methods: {
         onGetInfo(event) {
-            console.log(event)
             const userInfo = event.detail.userInfo
             if (userInfo) { // 允许授权
                 this.setData({

@@ -1,0 +1,44 @@
+.b-ctrl {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.b-item {
+    flex: 1;
+    text-align: center;
+    color: #333;
+    font-size: 32rpx;
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    margin-right: 12rpx;
+    font-size: 32rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.ft34 {
+    font-size: 34rpx;
+}
+
+.b-comment {
+    width: 560rpx;
+    text-align: left;
+    padding: 20rpx;
+    font-size: 32rpx;
+}
+
+.b-send {
+    background: #d81e06;
+    color: #fff;
+    font-size: 24rpx;
+    position: absolute;
+    right: 20rpx;
+    bottom: 20rpx;
+}

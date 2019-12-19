@@ -2,7 +2,8 @@
     "usingComponents": {
         "x-search": "/components/search/search",
         "x-login": "/components/login/login",
-        "x-blogCard": "/components/blogCard/blogCard"
+        "x-blogCard": "/components/blogCard/blogCard",
+        "x-blogCtrl": "/components/blogCtrl/blogCtrl"
     },
     "navigationBarTitleText": "发现",
     "enablePullDownRefresh": true

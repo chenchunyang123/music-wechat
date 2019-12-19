@@ -1,4 +1,4 @@
-.b-modal {
+.b-modal-self {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,17 +9,17 @@
     background-color: rgba(0, 0, 0, .6);
 }
 
-.b-panel {
+.b-panel-self {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 300rpx;
+    min-height: 300rpx;
     background-color: #fff;
 }
 
 /* 可以对外部的样式进行修改, 因为设置了js中styleIsolation */
-.b-modal .icon-shanchu {
+.b-modal-self .icon-shanchu {
     position: absolute;
     right: 10rpx;
     top: 10rpx;

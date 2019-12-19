@@ -1,0 +1,34 @@
+<view class="b-ctrl">
+    <view class="b-item" bind:tap="onComment">
+        <i class="iconfont icon-pinglun icon"></i>
+        <text>评论</text>
+    </view>
+    <view class="b-item">
+        <i class="iconfont icon-fenxiang icon ft34"></i>
+        <text>分享</text>
+    </view>
+</view>
+
+<!-- 是否已授权 -->
+<x-login 
+    modalShow="{{loginShow}}"
+    bind:authorizeSuccess="authorizeSuccess"
+    bind:authorizeFail="authorizeFail"
+/>
+
+<!-- 是否弹出评论 -->
+<x-bottomModal 
+    modalShow="{{modalShow}}"
+>
+    <view slot="content">
+        <textarea 
+            name="contentDetail" 
+            class="b-comment" 
+            placeholder="说点什么呢..." 
+            value="{{content}}"
+            fixed="true"
+            bindinput="onInput"
+        ></textarea>
+        <button class="b-send" bind:tap="onSend">发送</button>
+    </view>
+</x-bottomModal>

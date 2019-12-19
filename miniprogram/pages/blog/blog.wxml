@@ -17,7 +17,17 @@
     <view class="b-contentList">
         <block wx:for="{{blogList}}" wx:key="_id">
             <view class="b-panel">
-                <x-blogCard content="{{item}}" data-blogId="{{item._id}}" bind:tap="goComment" />
+                <x-blogCard
+                    content="{{item}}" 
+                    data-blogId="{{item._id}}" 
+                    bind:tap="goComment" 
+                />
+                <x-blogCtrl 
+                    iconfont="iconfont" 
+                    icon-pinglun="icon-pinglun" 
+                    icon-fenxiang="icon-fenxiang" 
+                    blogId="{{item._id}}"
+                />
             </view>
         </block>
     </view>
