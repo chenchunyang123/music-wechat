@@ -15,8 +15,11 @@ App({
             })
         }
 
+        this.getOpenid()
+
         this.globalData = {
             playingMusicId: -1,  // 控制播放列表高亮项 
+            openId: -1,
         }
     },
     setPlayingMusicId(musicId) {
@@ -24,5 +27,16 @@ App({
     },
     getPlayingMusicId() {
         return this.globalData.playingMusicId
+    },
+    getOpenid() {
+        wx.cloud.callFunction({ 
+            name: 'login'
+        }).then(res => {
+            const openId = res.result.openId
+            this.globalData.openId = openId
+            if (wx.getStorageSync(openId) === '') {
+                wx.setStorageSync(openId, [])
+            }
+        })
     }
 })

@@ -21,6 +21,17 @@ Page({
         this._loadMusicDetail(options.musicId)
     },
 
+    // 保存播放历史
+    savePlayHistory() {
+        const music = musiclist[nowPlayingIndex]    // 当前正在播放的歌曲
+        const openId = app.globalData.openId
+        const history = wx.getStorageSync(openId)
+        if (history.every(item => item.id !== music.id)) {
+            history.unshift(music)
+            wx.setStorageSync(openId, history)
+        }
+    },
+
     onPlay() {
         this.setData({
             isPlaying: true
@@ -115,13 +126,15 @@ Page({
                 })
                 return
             }
-            console.log(result)
             if (!this.data.isSame) {
                 backgroundAudioManager.src = result.data[0].url
                 backgroundAudioManager.title = music.name
                 backgroundAudioManager.coverImgUrl = music.al.picUrl
                 backgroundAudioManager.singer = music.ar[0].name
                 backgroundAudioManager.epname = music.al.name
+
+                // 保存播放历史
+                this.savePlayHistory()
             }
 
             this.setData({

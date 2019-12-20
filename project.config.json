@@ -75,6 +75,13 @@
 					"pathName": "pages/blogEdit/blogEdit",
 					"query": "nickName=陈春阳&avatarUrl=https://wx.qlogo.cn/mmopen/vi_32/QNfFu3UkKojrBPA04HwzKrXmWVVIrn5atMcDP5r0JBaeX0ZVR5GP7UmveSWYHpjEN83KcPJdbl7DpI0pvAOXFQ/132",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/profile",
+					"pathName": "pages/profile/profile",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
