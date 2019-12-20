@@ -1,1 +1,3 @@
-/* pages/profileBlogHistory/profileBlogHistory.wxss */
+.p-panel {
+    margin-bottom: 20rpx;
+}
